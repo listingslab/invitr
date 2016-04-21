@@ -13,7 +13,7 @@
   },
   "main": "start.js",
   "scripts": {
-    "start": "clear && node start.js"
+    "start": "node start.js"
   },
   "dependencies": {
     "colors": "^1.1.2",
