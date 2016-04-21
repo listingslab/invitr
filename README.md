@@ -7,6 +7,12 @@
 ```
 # An app to invite and keep track of guests to an event like a wedding.
 
+## Isomorphic JavaScript Invitation Server
+
+- A public site that is just static html, served with static-now. The site will do API calls back to the server for the content.
+- An administration site for administration of the text content of the site. This will be based on my example koa example blog
+- An API serving the content from use form the static site.
+
 If you're promoting an event, these are the most important questions to answer.
 
 1. Who? (it's always all about the people being first)
@@ -15,7 +21,10 @@ If you're promoting an event, these are the most important questions to answer.
 4. Where?
 5. How?
 
-## Key Technologues
-- Isomorphic JavaScript Invitation App
+## Technologies
+
+Node.js, Koa.js, OpenShift, Git, npm, 
+
 
 http://patorjk.com/software/taag/#p=display&f=Small&t=by%20listingslab
+

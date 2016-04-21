@@ -1,5 +1,5 @@
 "use strict";
-
+// Invitr Isomorphic Server by Listingslab
 const 	appname 	= 'invitr',
 		env			= process.env,
 		host 		= env.NODE_IP || 'localhost',
@@ -10,13 +10,17 @@ const 	appname 	= 'invitr',
 
 let app = koa();
 
-function *reqlogger(next){
-	var timeIs = new Date ();
-	timeIs = timeIs.getHours() + ':' + timeIs.getMinutes() + ' ' + timeIs.getSeconds();
-	console.log('%s - %s %s',timeIs, this.req.method, this.req.url);
+function *reqlogger(next) {
+	let reqTime = new Date ();
+	reqTime = reqTime.getHours() + ':' + reqTime.getMinutes() + ' ' + reqTime.getSeconds();
+	console.log('%s - %s %s', reqTime, this.req.method, this.req.url);
 	yield next;
 }
 app.use(reqlogger);
+
+
+
+
 
 
 app.listen( port, host, function () {
