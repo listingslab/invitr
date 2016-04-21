@@ -5,7 +5,7 @@
  |_|_||_\_/|_|\__|_|  
 
 ```
-# An app to invite and keep track of guests to an event like a wedding.
+# Invite and track guests to events like weddings
 
 ## Isomorphic JavaScript Invitation Server
 
