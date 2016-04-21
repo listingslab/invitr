@@ -18,9 +18,6 @@ app.use(function* (next) {
 	yield next;
 });
 
-app.use(function* (next) {
-	yield next;
-});
 
 app.use(serve('public'));
 app.use(body({formLimit:'10mb'}));

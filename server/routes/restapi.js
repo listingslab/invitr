@@ -14,8 +14,7 @@ function route(app, db) {
 
 		.get(function* (next) {
 			this.body = {
-				message:'Welcome to the RestAPI',
-				method: 'GET'
+				message:'Invitr RestAPI'
 			};
 			this.status = 200;
 			yield next;
