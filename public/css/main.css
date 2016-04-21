@@ -1,0 +1,15 @@
+body, html, #wrapper {
+    width: 99%;
+    height: 98%;
+    font-size:11px;
+	font-family: courier
+}
+#wrapper {
+    display: table
+}
+
+#main {
+    display: table-cell;
+    vertical-align: middle;
+    text-align:center
+}

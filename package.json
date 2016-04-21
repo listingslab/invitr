@@ -1,0 +1,28 @@
+{
+  "name": "zoo",
+  "version": "1.0.0",
+  "author": "Chris Dorward <listingslab@gmail.com> (http://listingslab.com)",
+  "description": "Isomorphic JavaScript Invitation App",
+  "keywords": [
+    "isomorphic", "javascript", "node.js", "Koa", "react","webpack"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:listingslab/invitr.git"
+  },
+  "main": "start.js",
+  "scripts": {
+    "start": "clear && node start.js"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "fs-extra": "^0.28.0",
+    "koa": "^1.2.0",
+    "koa-better-body": "^2.0.0",
+    "koa-request": "^1.0.0",
+    "koa-routing": "^1.3.1",
+    "koa-static": "^2.0.0"
+  },
+  "devDependencies": {}
+}
