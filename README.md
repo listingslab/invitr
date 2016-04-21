@@ -1,0 +1,1 @@
+This is the original content of the OpenShit cartridge the application runs on
