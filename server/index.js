@@ -1,30 +1,30 @@
+// Isomorphic Server by Listingslab
 "use strict";
-// Invitr Isomorphic Server by Listingslab
+
 const 	appname 	= 'invitr',
 		env			= process.env,
 		host 		= env.NODE_IP || 'localhost',
 		port 		= env.NODE_PORT || 1976,
+		utils 		= require('./utils'),
 		clear		= require('clear'),
 		colors		= require('colors'),
-		koa			= require('koa');
+		koa			= require('koa'),
+		mount 		= require('koa-mount');
 
 let app = koa();
 
 function *reqlogger(next) {
-	let reqTime = new Date ();
-	reqTime = reqTime.getHours() + ':' + reqTime.getMinutes() + ' ' + reqTime.getSeconds();
-	console.log('%s - %s %s', reqTime, this.req.method, this.req.url);
+	console.log('%s %s %s %s', this.req.method, 'Request to', this.req.url , '@ ' + utils.time() );
 	yield next;
 }
 app.use(reqlogger);
 
-
-
-
-
-
 app.listen( port, host, function () {
 	clear ();
-	let message = '~~~~~~~~~~~~~~~~| ' + appname + ' started on http://' + host + ':' +  port + ' |~~~~~~~~~~~~~~~~';
+	let message = '~~~~~~~~~| Started ' + appname + ' on http://' + host + ':' +  port + ' @ ' + utils.time() + ' |~~~~~~~~~~';
 	console.log(message.bgRed);
 });
+
+function getTime (){
+	
+}
