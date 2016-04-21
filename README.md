@@ -7,6 +7,14 @@
 ```
 # Isomorphic JavaScript Invitation App
 
+If you're promoting an event, these are the most important questions to answer.
+
+1) Who? (it's always all about the people being first)
+2) What? (what the people are doing)
+3) When?
+4) Where?
+5) How?
+
 ```
   _           _ _    _   _              _      _    
  | |__ _  _  | (_)__| |_(_)_ _  __ _ __| |__ _| |__ 
