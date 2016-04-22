@@ -8,16 +8,19 @@ var app = module.exports = koa();
 
 // prefix: api
 app.use(route.get("/", apithing));
-app.use(route.get("/onething/:bit", onething));
+app.use(route.get("/:bit", onething));
 
 function *apithing() {
-	this.body = "api";
-};
-
-function *onething() {
 	this.body = {
 		method:this.req.method,
 		url:this.req.url,
-		param: ''
+	};
+};
+
+function *onething(param) {
+	this.body = {
+		method:this.req.method,
+		url:this.req.url,
+		param:param
 	};
 };

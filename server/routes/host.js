@@ -2,9 +2,7 @@
 "use strict";
 
 var koa = require('koa');
+var serve = require('koa-static');
 var app = module.exports = koa();
 
-app.use(function *(next){
-  yield next;
-  this.body = 'Host. Check to see if session is logged in';
-});
+app.use(serve('public'));

@@ -2,9 +2,7 @@
 "use strict";
 
 var koa = require('koa');
+var serve = require('koa-static');
 var app = module.exports = koa();
 
-app.use(function *(next){
-  yield next;
-  this.body = 'Guest';
-});
+app.use(serve('public'));
