@@ -26,8 +26,8 @@ function *apithing() {
 	this.redirect ('/');
 };
 
-app.listen(config.app.port, ip, function () {
+app.listen(port, ip, function () {
 	clear ();
-	let message = '~~~~~~~~~| Started ' + appname + ' on http://' + ip + ':' +  config.app.port + ' @ ' + utils.time() + ' |~~~~~~~~~~';
+	let message = '~~~~~~~~~| Started ' + appname + ' on http://' + ip + ':' +  port + ' @ ' + utils.time() + ' |~~~~~~~~~~';
 	console.log(message.bgRed);
 });
