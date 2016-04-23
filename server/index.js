@@ -14,8 +14,6 @@ const 	config 		= require('./config'),
 		route 		= require('koa-route'),
 		serve 		= require('koa-static');
 
-
-
 let app = koa();
 app.use(utils.requestLogger);
 app.use(serve('public'));
@@ -28,9 +26,8 @@ function *apithing() {
 	this.redirect ('/');
 };
 
-app.listen(port, ip, function () {
+app.listen(config.app.port, ip, function () {
 	clear ();
-	let message = '~~~~~~~~~| Started ' + appname + ' on http://' + ip + ':' +  port + ' @ ' + utils.time() + ' |~~~~~~~~~~';
+	let message = '~~~~~~~~~| Started ' + appname + ' on http://' + ip + ':' +  config.app.port + ' @ ' + utils.time() + ' |~~~~~~~~~~';
 	console.log(message.bgRed);
-	// console.log(config);
 });

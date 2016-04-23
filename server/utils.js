@@ -18,7 +18,7 @@ module.exports.time = function () {
 // create an basic API response object
 module.exports.apiResponseObj = function (message) {
 	let res = {
-		api: 'invitr 1.0.1',
+		api: config.api.version,
 		message: message,
 		unixstamp: getUnixstamp (),
 		time: getTime(),
@@ -30,19 +30,9 @@ module.exports.apiResponseObj = function (message) {
 ////////////////////////////////////////////////////
 // Internal Functions
 
-// Returns the time in the format 12:01 34s
+// Returns the time in the format 12:01 34
 function getTime() {
-	let d = new Date ();
-	let m = d.getMinutes();
-	if (m < 10){
-		m = '0' + m;
-	}
-	let s = d.getSeconds();
-	if (s < 10){
-		s = '0' + s;
-	}
- 	let time = d.getHours() + ':' + m + ' ' + s + 's';
- 	return time;
+	return moment().format ('HH:mm ss');
 }
 
 // Returns current unix timestamp
