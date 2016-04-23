@@ -1,8 +1,9 @@
 "use strict";
-var path = require("path");
-var _ = require("lodash");
 
-var env = process.env.NODE_ENV = process.env.NODE_ENV || "development";
+var path    = require("path");
+var _       = require("lodash");
+
+var env     = process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
 var base = {
   api:{
@@ -17,6 +18,7 @@ var base = {
 var specific = {
   development: {
     app: {
+      ip: 'localhost',
       port: 1976,
       name: "Invitr on Localhost"
     },
@@ -26,7 +28,8 @@ var specific = {
   },
   production: {
     app: {
-      port: process.env.PORT || 3000,
+      ip: env.NODE_IP,
+      port: env.NODE_PORT,
       name: "Invitr on OpenShift",
     },
     mongo: {
