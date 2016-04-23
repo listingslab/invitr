@@ -1,7 +1,8 @@
 // Listingslab Server Utilities
 "use strict";
 
-const 	moment	= require('moment');
+const 	config 		= require('./config'),
+		moment		= require('moment');
 
 // Logger to keep track of server requests
 module.exports.requestLogger = function *(next) {
@@ -17,10 +18,11 @@ module.exports.time = function () {
 // create an basic API response object
 module.exports.apiResponseObj = function (message) {
 	let res = {
-		api: 'vs1.0.1',
+		api: 'invitr 1.0.1',
 		message: message,
 		unixstamp: getUnixstamp (),
-		time: getTime()
+		time: getTime(),
+		config:config
 	}
 	return res;
 };

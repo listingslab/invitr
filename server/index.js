@@ -1,7 +1,8 @@
 // Isomorphic Server by Listingslab
 "use strict";
 
-const 	appname 	= 'invitr',
+const 	config 		= require('./config'),
+		appname 	= 'invitr',
 		env			= process.env,
 		ip 			= env.NODE_IP || 'localhost',
 		port 		= env.NODE_PORT || 1976,
@@ -12,6 +13,8 @@ const 	appname 	= 'invitr',
 		mount 		= require('koa-mount'),
 		route 		= require('koa-route'),
 		serve 		= require('koa-static');
+
+
 
 let app = koa();
 app.use(utils.requestLogger);
@@ -29,4 +32,5 @@ app.listen(port, ip, function () {
 	clear ();
 	let message = '~~~~~~~~~| Started ' + appname + ' on http://' + ip + ':' +  port + ' @ ' + utils.time() + ' |~~~~~~~~~~';
 	console.log(message.bgRed);
+	// console.log(config);
 });
