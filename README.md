@@ -22,6 +22,7 @@
 - An API serving the content from use form the static site.
 
 http://www.marcusoft.net/2015/04/koa-js-and-the-power-of-mouting.html
+https://www.npmjs.com/package/koa-simple-auth
 
 ### Technologies
 

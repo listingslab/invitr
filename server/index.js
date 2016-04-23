@@ -16,18 +16,18 @@ let app = koa();
 
 app.use(utils.requestLogger);
 
+// 
 let api = require('./routes/api.js');
-let host = require('./routes/host.js');
-let guest = require('./routes/guest.js');
+// let host = require('./routes/host.js');
+// let guest = require('./routes/guest.js');
 
-app.use(mount('/api', api));
-app.use(mount('/host', host));
-app.use(mount('/', guest));
+// app.use(mount('/api', api));
+// app.use(mount('/host', host));
+// app.use(mount('/', guest));
 
-app.use(route.get('*', function *(){
-	this.redirect('/');
-}));
-
+// app.use(route.get('*', function *(){
+// 	this.redirect('/');
+// }));
 app.listen(port, ip, function () {
 	clear ();
 	let message = '~~~~~~~~~| Started ' + appname + ' on http://' + ip + ':' +  port + ' @ ' + utils.time() + ' |~~~~~~~~~~';
