@@ -2,10 +2,6 @@
 "use strict";
 
 const 	config 		= require('./config'),
-		appname 	= 'invitr',
-		env			= process.env,
-		ip 			= env.NODE_IP || 'localhost',
-		port 		= env.NODE_PORT || 1976,
 		utils 		= require('./utils'),
 		clear		= require('clear'),
 		colors		= require('colors'),
@@ -26,8 +22,8 @@ function *apithing() {
 	this.redirect ('/');
 };
 
-app.listen(port, ip, function () {
+app.listen(config.app.port, config.app.ip, function () {
 	clear ();
-	let message = '~~~~~~~~~| Started ' + appname + ' on http://' + ip + ':' +  port + ' @ ' + utils.time() + ' |~~~~~~~~~~';
+	let message = '~~~~~~~~~| Started ' + config.app.name + ' on http://' + config.app.ip + ':' +  config.app.port + ' @ ' + utils.time() + ' |~~~~~~~~~~';
 	console.log(message.bgRed);
 });

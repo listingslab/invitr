@@ -17,7 +17,8 @@ var base = {
 var specific = {
   development: {
     app: {
-      name: "Invitr on Localhost",
+      name: "Invitr",
+      server: "localhost",
       ip: 'localhost',
       port: 1976
     },
@@ -27,7 +28,8 @@ var specific = {
   },
   production: {
     app: {
-      name: "Invitr on OpenShift",
+      name: "Invitr",
+      server: "OpenShift",
       ip: process.env.NODE_IP,
       port: process.env.NODE_PORT
     },
