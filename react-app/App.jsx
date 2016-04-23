@@ -6,7 +6,7 @@ class App extends Component {
 	render() {
 		return (
 	      <div>
-	        I am content
+	        I am content <a href="/api/verify/">Verify API</a>
 	      </div>
 	    );
 	}
