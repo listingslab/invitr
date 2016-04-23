@@ -1,6 +1,6 @@
 {
-  "name": "zoo",
-  "version": "1.0.0",
+  "name": "invitr",
+  "version": "1.1.0",
   "author": "Chris Dorward <listingslab@gmail.com> (http://listingslab.com)",
   "description": "Isomorphic JavaScript Invitation App",
   "keywords": [
@@ -20,6 +20,7 @@
   "main": "start.js",
   "scripts": {
     "start": "node start.js",
+    "api": "node server/api_dev.js",
     "build": "clear && webpack --optimize-minimize && gulp --silent",
     "dev": "clear && webpack-dev-server --port 1976 --inline --progress --hot --content-base public --history-api-fallback",
     "lint": "eslint . --ext .js --ext .jsx || true"
