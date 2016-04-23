@@ -2,12 +2,11 @@
 
 var path    = require("path");
 var _       = require("lodash");
-
 var env     = process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
 var base = {
   api:{
-    version: 'invitr 1.0.1'
+    version: 'invitr 1.0.3'
   },
   app: {
     root: path.normalize(path.join(__dirname, "/..")),
@@ -18,9 +17,9 @@ var base = {
 var specific = {
   development: {
     app: {
+      name: "Invitr on Localhost",
       ip: 'localhost',
-      port: 1976,
-      name: "Invitr on Localhost"
+      port: 1976
     },
     mongo: {
       url: "mongodb://localhost/invitr",
@@ -28,9 +27,9 @@ var specific = {
   },
   production: {
     app: {
-      ip: env.NODE_IP,
-      port: env.NODE_PORT,
       name: "Invitr on OpenShift",
+      ip: process.env.NODE_IP,
+      port: process.env.NODE_PORT
     },
     mongo: {
       url: "mongodb://openshift/invitr",
