@@ -21,8 +21,8 @@
   "scripts": {
     "start": "node start.js",
     "api": "node server/api_dev.js",
-    "build": "clear && webpack --optimize-minimize && gulp --silent",
-    "dev": "clear && webpack-dev-server --port 1976 --inline --progress --hot --content-base public --history-api-fallback",
+    "build": "clear && webpack --optimize-minimize && node start.js",
+    "dev": "clear && webpack-dev-server --port 1968 --inline --progress --hot --content-base public --history-api-fallback",
     "lint": "eslint . --ext .js --ext .jsx || true"
   },
   "dependencies": {
