@@ -10,24 +10,21 @@ const 	appname 	= 'invitr',
 		colors		= require('colors'),
 		koa			= require('koa'),
 		mount 		= require('koa-mount'),
-		route 		= require('koa-route');
+		route 		= require('koa-route'),
+		serve 		= require('koa-static');
 
 let app = koa();
-
 app.use(utils.requestLogger);
+app.use(serve('public'));
 
-// 
-let api = require('./routes/api.js');
-// let host = require('./routes/host.js');
-// let guest = require('./routes/guest.js');
+let api = require('./api.js');
+app.use(mount('/api', api));
 
-// app.use(mount('/api', api));
-// app.use(mount('/host', host));
-// app.use(mount('/', guest));
+app.use(route.get("*", apithing));
+function *apithing() {
+	this.redirect ('/');
+};
 
-// app.use(route.get('*', function *(){
-// 	this.redirect('/');
-// }));
 app.listen(port, ip, function () {
 	clear ();
 	let message = '~~~~~~~~~| Started ' + appname + ' on http://' + ip + ':' +  port + ' @ ' + utils.time() + ' |~~~~~~~~~~';
