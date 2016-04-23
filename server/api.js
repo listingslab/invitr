@@ -10,9 +10,27 @@ const 	env		= process.env,
 var app = module.exports = koa();
 
 // prefix: api
-app.use(route.get("/", apithing));
-app.use(route.get("/nest/:bit", onething));
+app.use(route.get("/", api));
 app.use(route.get("/verify", verify));
+app.use(route.get("/nest/:bit", nest));
+
+
+function *api() {
+	let res = utils.apiResponseObj('Welcome to the invitr API');
+	this.body = res;
+}
+
+function *apithing() {
+	this.body = {
+		message:'Welcome to the invitr API',
+		endpoints:{
+			verify:{
+				description: 'Loaded by the frontend to verify everything is working',
+				path: '/api/verify'
+			}
+		}
+	};
+};
 
 // Verify that the environment & mongoDB is all fine
 function *verify() {
@@ -22,14 +40,8 @@ function *verify() {
 	};
 };
 
-function *apithing() {
-	this.body = {
-		method:this.req.method,
-		time:utils.time(),
-	};
-};
 
-function *onething(param) {
+function *nest(param) {
 	this.body = {
 		method:this.req.method,
 		url:this.req.url,
