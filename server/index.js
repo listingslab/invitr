@@ -18,7 +18,15 @@ const	clear		= require('clear'),
 let 	app = koa();
 app.use(serve('public'));
 
+/**
+ * API Routes
+ */
+let 	setup = require('./routes/setup');
+app.use(route.get('/api/setup', setup.setup));
 
+/**
+ * React Frontend
+ */
 app.use(route.get("*", catchAllRoute));
 function *catchAllRoute() {
 	this.redirect ('/');
@@ -28,5 +36,5 @@ app.use(logger());
 app.listen(config.app.port, config.app.ip, function () {
 	clear ();
 	let message = '~~~~~~~~~| Started ' + config.app.name + ' on http://' + config.app.ip + ':' +  config.app.port + ' @ ' + utils.time() + ' |~~~~~~~~~~';
-	console.log(message.bgRed);
+	console.log(message.bgMagenta);
 });

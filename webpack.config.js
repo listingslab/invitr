@@ -1,19 +1,15 @@
-/*	
-	listingslab webpack configuration file
-	compiles the react application using /react/App.jsx as the entry point
-*/
-
+/**
+ * webpack configuration file
+ */
 "use strict";
-
 
 const   clear    = require('clear'),
         colors    = require('colors'),
         path = require('path'),
         webpack = require('webpack');
 
-
 clear ();
-console.log('Running Webpack'.cyanBG);
+console.log('Webpacking...'.bgMagenta);
 
 const PATHS = {
   app: path.join(__dirname, 'react-app/App.jsx'),

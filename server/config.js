@@ -12,7 +12,7 @@ const   _           = require("lodash"),
 let base = {
   app: {
     name: "Invitr",
-    version: 'invitr 1.1.3',
+    version: '1.2.0',
     root: path.normalize(path.join(__dirname, "/..")),
     env: environment,
     ip: ip,

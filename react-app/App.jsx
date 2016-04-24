@@ -6,7 +6,7 @@ class App extends Component {
 
 	constructor() {
 		super();
-		let apiURL = '/api/';
+		let apiURL = '/api/setup';
 		if (window.location.port === '1968') {
 			apiURL = 'http://localhost:1975/api/setup';
 		}
@@ -18,11 +18,11 @@ class App extends Component {
 	render() {
 		return (
 	      <div>
-	        <h2>I. Am. Content</h2>
+	      	<h2>Invitr</h2>
+	        <h3>I. Am. Content</h3>
 	        <p>
-	        apiURL: <a
+	        <a
 	        	href={ this.state.apiURL }
-	        	target="_blank"
 	        >{ this.state.apiURL }</a>
 	        </p>
 	      </div>

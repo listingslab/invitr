@@ -29,5 +29,5 @@ app.use(logger());
 app.listen(1975, 'localhost', function () {
 	clear ();
 	let message = '~~~~~~~~~| Dev API on http://localhost:1975/api @' + utils.time() + ' |~~~~~~~~~~';
-	console.log(message.bgMagenta);
+	console.log(message.bgGreen);
 });

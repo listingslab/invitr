@@ -16,7 +16,8 @@ module.exports.time = function () {
 module.exports.apiResponseObj = function (message) {
 	// create an basic API response object
 	let res = {
-		api: config.app.version,
+		appname: config.app.name,
+		version: config.app.version,
 		message: message,
 		unixstamp: getUnixstamp (),
 		time: getTime(),
