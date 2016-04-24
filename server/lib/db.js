@@ -6,4 +6,4 @@
 const   config 	= require('../config'),
 		monk 	= require('monk');
 
-module.exports = monk(config.mongo.monk);
+module.exports = monk(config.mongo.url);

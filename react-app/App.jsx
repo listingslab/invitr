@@ -18,7 +18,7 @@ class App extends Component {
 	render() {
 		return (
 	      <div>
-	      	<h2>Invitr</h2>
+	      	<h2>This. Is. Invitr</h2>
 	        <h3>I. Am. Content</h3>
 	        <p>
 	        <a
