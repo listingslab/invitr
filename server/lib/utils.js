@@ -7,11 +7,6 @@ const 	config 		= require('../config');
 // Dependencies
 const 	moment		= require('moment');
 
-module.exports.requestLogger = function *(next) {
-	// Logger to keep track of server requests
-	console.log('%s %s %s %s', this.req.method, 'Request to', this.req.url , '@ ' + getTime ());
-	yield next;
-}
 
 module.exports.time = function () {
 	// Exposes the time

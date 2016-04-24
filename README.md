@@ -29,3 +29,25 @@ https://www.npmjs.com/package/koa-simple-auth
 JavaScript, Node.js, Koa.js, OpenShift, Git, npm, Gulp, webpack, React
 
 http://patorjk.com/software/taag/#p=display&f=Small&t=by%20listingslab
+
+### Colors
+black
+red
+green
+yellow
+blue
+magenta
+cyan
+white
+gray
+grey
+
+### background colors
+bgBlack
+bgRed
+bgGreen
+bgYellow
+bgBlue
+bgMagenta
+bgCyan
+bgWhite
