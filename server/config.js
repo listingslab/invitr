@@ -36,7 +36,7 @@ let specific = {
       server: "OpenShift"
     },
     mongo: {
-      url: "mongodb://openshift/invitr",
+      url: process_env.OPENSHIFT_MONGODB_DB_URL,
     },
   },
 };
