@@ -1,7 +1,7 @@
 // Isomorphic Server by Listingslab
 "use strict";
 
-const 	config 		= require('./config'),
+const 	config 		= require('../config'),
 		utils 		= require('./utils'),
 		clear		= require('clear'),
 		colors		= require('colors'),
@@ -14,11 +14,11 @@ let app = koa();
 app.use(utils.requestLogger);
 app.use(serve('public'));
 
-let api = require('./api.js');
+let api = require('./api_routes.js');
 app.use(mount('/api', api));
 
-app.use(route.get("*", apithing));
-function *apithing() {
+app.use(route.get("*", catchAll));
+function *catchAll() {
 	this.redirect ('/');
 };
 

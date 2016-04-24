@@ -2,7 +2,7 @@
   "name": "invitr",
   "version": "1.1.0",
   "author": "Chris Dorward <listingslab@gmail.com> (http://listingslab.com)",
-  "description": "Isomorphic JavaScript Invitation App",
+  "description": "Invite and track guests to events like weddings",
   "keywords": [
     "isomorphic",
     "javascript",
@@ -20,7 +20,7 @@
   "main": "start.js",
   "scripts": {
     "start": "node start.js",
-    "api": "node server/api_dev.js",
+    "api": "nodemon server/dev_api.js",
     "build": "clear && webpack --optimize-minimize && node start.js",
     "dev": "clear && webpack-dev-server --port 1968 --inline --progress --hot --content-base public --history-api-fallback",
     "lint": "eslint . --ext .js --ext .jsx || true"
