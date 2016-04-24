@@ -36,7 +36,7 @@ let specific = {
       server: "OpenShift"
     },
     mongo: {
-      url: "mongodb://" + process_env.OPENSHIFT_MONGODB_DB_HOST + ':' + OPENSHIFT_MONGODB_DB_PORT,
+      url: process_env.OPENSHIFT_MONGODB_DB_URL
     },
   },
 };
