@@ -10,7 +10,6 @@ const   _           = require("lodash"),
         port        = process.env.NODE_PORT = process.env.NODE_PORT || 1976,
         process_env = process.env;
 
-
 let base = {
   app: {
     name: "Invitr",
@@ -29,7 +28,6 @@ let specific = {
       server: "localhost"
     },
     mongo: {
-      monk: "localhost/invitr",
       url: "mongodb://localhost/invitr"
     },
   },
@@ -38,7 +36,7 @@ let specific = {
       server: "OpenShift"
     },
     mongo: {
-      url: "mongodb://openshift/invitr",
+      url: "mongodb://" + process_env.OPENSHIFT_MONGODB_DB_HOST + ':' + OPENSHIFT_MONGODB_DB_PORT,
     },
   },
 };
