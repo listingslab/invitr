@@ -25,19 +25,15 @@ let base = {
 let specific = {
   development: {
     app: {
-      server: "localhost"
-    },
-    mongo: {
-      url: "mongodb://localhost/invitr"
-    },
+      server: "localhost",
+      mongoUrl: "mongodb://localhost/invitr"
+    }
   },
   production: {
     app: {
-      server: "OpenShift"
-    },
-    mongo: {
-      url: ""
-    },
+      server: "OpenShift",
+      mongoUrl: "mongodb://sos/invitr"
+    }
   },
 };
 
