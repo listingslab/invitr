@@ -1,15 +1,14 @@
 /**
  * Setup Endpoint:  /api/setup/
  */
- "use strict";
+"use strict";
 
-const   parse  = require('co-body'),
-		utils  = require('../lib/utils'),
-        todos  = require('../models/todos');
+const   utils  = require('../lib/utils'),
+        guests  = require('../models/guests');
 
 exports.setup = function *() {
-	//var results = yield todos.find({});
 	let res = utils.apiResponseObj('Setup Endpoint');
-	res.endpoint = '/api/setup/';
+	let results = yield guests.find({});
+	res.guests = results;
 	this.body = res;
 };

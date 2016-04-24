@@ -1,4 +1,6 @@
-// Server Utilities
+/**
+ * Server Utilities
+ */
 "use strict";
 
 // Modules

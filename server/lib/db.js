@@ -1,7 +1,9 @@
-var monk = require('monk');
+/**
+ * Initialize database connection
+ */
+"use strict";
 
-// Initialize database connection
-//var db = monk('localhost/test');
-//var todos = wrap(db.get('todos'));
+const   config 	= require('../config'),
+		monk 	= require('monk');
 
-module.exports = monk('localhost/test');
+module.exports = monk(config.mongo.monk);

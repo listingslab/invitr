@@ -6,9 +6,9 @@ class App extends Component {
 
 	constructor() {
 		super();
-		let apiURL = '/api/setup';
+		let apiURL = '/api';
 		if (window.location.port === '1968') {
-			apiURL = 'http://localhost:1975/api/setup';
+			apiURL = 'http://localhost:1975/api';
 		}
 		this.state = {
 			apiURL: apiURL
