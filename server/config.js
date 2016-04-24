@@ -32,7 +32,7 @@ let specific = {
   production: {
     app: {
       server: "OpenShift",
-      mongoUrl: "mongodb://admin:h4uWsgHza8ME@127.4.136.2:27017/invitr"
+      mongoUrl: process_env.OPENSHIFT_MONGODB_DB_URL + "/invitr"
     }
   },
 };
