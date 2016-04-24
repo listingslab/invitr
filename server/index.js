@@ -1,24 +1,27 @@
-// Isomorphic Server by Listingslab
+// Isomorphic Server for Invitr by Listingslab
 "use strict";
 
+// Modules
 const 	config 		= require('../config'),
 		utils 		= require('./utils'),
-		clear		= require('clear'),
+		api 		= require('./api.js');
+
+// Dependencies
+const	clear		= require('clear'),
 		colors		= require('colors'),
 		koa			= require('koa'),
 		mount 		= require('koa-mount'),
 		route 		= require('koa-route'),
 		serve 		= require('koa-static');
 
-let app = koa();
+let 	app = koa();
+
 app.use(utils.requestLogger);
 app.use(serve('public'));
-
-let api = require('./api_routes.js');
 app.use(mount('/api', api));
+app.use(route.get("*", catchAllRoute));
 
-app.use(route.get("*", catchAll));
-function *catchAll() {
+function *catchAllRoute() {
 	this.redirect ('/');
 };
 

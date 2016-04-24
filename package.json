@@ -22,7 +22,7 @@
     "start": "node start.js",
     "api": "nodemon server/dev_api.js",
     "build": "clear && webpack --optimize-minimize && node start.js",
-    "dev": "clear && webpack-dev-server --port 1968 --inline --progress --hot --content-base public --history-api-fallback",
+    "dev": "clear && nodemon server/dev_api.js && webpack-dev-server --port 1968 --inline --progress --hot --content-base public --history-api-fallback",
     "lint": "eslint . --ext .js --ext .jsx || true"
   },
   "dependencies": {

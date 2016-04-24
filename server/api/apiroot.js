@@ -1,7 +1,7 @@
-
-"use strict";
 // Overview of the API\'s endpoints etc
+"use strict";
 
+// Modules
 const 	config 	= require('../../config'),
 		utils 	= require('../utils');
 

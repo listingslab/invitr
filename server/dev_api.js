@@ -1,9 +1,12 @@
 // Special Development version of the API to run alongsite the webpack devserver
 "use strict";
 
+// Modules
 const 	config 		= require('../config'),
-		utils 		= require('./utils'),
-		clear		= require('clear'),
+		utils 		= require('./utils');
+
+// Dependencies
+const 	clear		= require('clear'),
 		colors		= require('colors'),
 		koa			= require('koa'),
 		mount 		= require('koa-mount'),
@@ -12,11 +15,11 @@ const 	config 		= require('../config'),
 let app = koa();
 app.use(utils.requestLogger);
 
-let api = require('./api_routes.js');
+let api = require('./api.js');
 app.use(mount('/api', api));
 
 app.listen(1975, 'localhost', function () {
 	clear ();
-	let message = '~~~~~~~~~| Started Dev API on http://localhost:1975/api @ ' + utils.time() + ' |~~~~~~~~~~';
-	console.log(message.bgRed);
+	let message = '~~~~~~~~~| Dev Environment on http://localhost:1968 @' + utils.time() + ' |~~~~~~~~~~';
+	console.log(message.bgGreen);
 });

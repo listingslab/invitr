@@ -13,7 +13,7 @@ const   clear    = require('clear'),
 
 
 clear ();
-console.log('Running Webpack'.redBG);
+console.log('Running Webpack'.cyanBG);
 
 const PATHS = {
   app: path.join(__dirname, 'react-app/App.jsx'),

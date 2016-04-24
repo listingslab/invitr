@@ -1,11 +1,14 @@
-
+// Invitr API
 "use strict";
 
+// Modules
 const 	config 	= require('../config'),
-		koa 	= require('koa'),
-		route 	= require('koa-route'),
 		apiroot = require('./api/apiroot'),
 		setup 	= require('./api/setup');
+
+// Dependencies
+const 	koa 	= require('koa'),
+		route 	= require('koa-route');
 
 let app = module.exports = koa();
 

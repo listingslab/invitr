@@ -1,22 +1,25 @@
-// Listingslab Server Utilities
+// Server Utilities
 "use strict";
 
-const 	config 		= require('../config'),
-		moment		= require('moment');
+// Modules
+const 	config 		= require('../config');
 
-// Logger to keep track of server requests
+// Dependencies
+const 	moment		= require('moment');
+
 module.exports.requestLogger = function *(next) {
+	// Logger to keep track of server requests
 	console.log('%s %s %s %s', this.req.method, 'Request to', this.req.url , '@ ' + getTime ());
 	yield next;
 }
 
-// Exposes the time
 module.exports.time = function () {
-  return getTime();
+	// Exposes the time
+	return getTime();
 };
 
-// create an basic API response object
 module.exports.apiResponseObj = function (message) {
+	// create an basic API response object
 	let res = {
 		api: config.app.version,
 		message: message,
@@ -27,15 +30,12 @@ module.exports.apiResponseObj = function (message) {
 	return res;
 };
 
-////////////////////////////////////////////////////
-// Internal Functions
-
-// Returns the time in the format 12:01 34
 function getTime() {
+	// Returns the time in the format 12:01 34
 	return moment().format ('HH:mm ss');
 }
 
-// Returns current unix timestamp
 function getUnixstamp() {
+	// Returns current unix timestamp
  	return moment().unix();
 }

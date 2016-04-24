@@ -1,10 +1,10 @@
-
+// Verify that the environment & mongoDB is all fine
 "use strict";
 
+// Modules
 const 	config 	= require('../../config'),
 		utils 	= require('../utils');
 
-// Verify that the environment & mongoDB is all fine
 function *setup() {
 	let res = utils.apiResponseObj('Setup and verify environment');
 	this.body = res;
