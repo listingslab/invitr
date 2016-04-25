@@ -43,10 +43,22 @@ module.exports = {
 
     loaders: [
       
-      { 
-        test: /\.css$/, 
-        loader: 'style!css' 
-      },
+      // { 
+      //   test: /\.css$/, 
+      //   loader: 'style!css' 
+      // },
+
+      { test: /node_modules[\/|\\].*\.css$/, loaders: [
+        'style-loader?singleton',
+        'css-loader',
+        'cssnext-loader'
+      ]},
+
+      { test: /[\/|\\]react-app[\/|\\].*\.css$/, loaders: [
+        'style-loader?singleton',
+        'css-loader?modules&localIdentName=[path]--[local]',
+        'cssnext-loader'
+      ]},
 
       { 
         test: /\.csv/, loader: 'dsv-loader' 
