@@ -48,6 +48,10 @@ module.exports = {
         loader: 'style!css' 
       },
 
+      { 
+        test: /\.csv/, loader: 'dsv-loader' 
+      },
+  
       {
         test: /\.jsx?$/,
         loader: ['babel'],

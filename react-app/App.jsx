@@ -1,31 +1,27 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { browserHistory, Router, Route, IndexRoute, Link } from 'react-router';
+import appState from './state/app';
+import styles from './App.css';
+import Navigation from './components/Navigation/Navigation';
+import LocaleFlags from './components/LocaleFlags/LocaleFlags';
 
 class App extends Component {
 
-	constructor() {
-		super();
-		let apiURL = '/api';
-		if (window.location.port === '1968') {
-			apiURL = 'http://localhost:1975/api';
-		}
+	constructor(props) {
+		super(props);
 		this.state = {
-			apiURL: apiURL
+			apiUrl: appState.apiUrl
 		};
 	}
 
 	render() {
+		console.log('Render App');
 		return (
-	      <div>
-	      	<h2>This. Is. Invitr</h2>
-	        <h3>I. Am. Content</h3>
-	        <p>
-	        <a
-	        	href={ this.state.apiURL }
-	        >{ this.state.apiURL }</a>
-	        </p>
-	      </div>
+	      <app className={ styles.App }>
+	      	<LocaleFlags />
+	      	<Navigation />
+	      </app>
 	    );
 	}
 }
