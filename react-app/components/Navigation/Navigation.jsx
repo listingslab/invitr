@@ -12,7 +12,6 @@ export default class Navigation extends React.Component {
 	render() {
 		return (
 			<nav className={ styles.Navigation }>
-				<h1>NAVIGATION</h1>
 				<ul>
 					<li><a href="#">{ localise ('nav_who') }</a></li>
 					<li><a href="#">{ localise ('nav_what') }</a></li>

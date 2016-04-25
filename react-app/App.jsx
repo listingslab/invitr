@@ -10,16 +10,22 @@ class App extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {
-			apiUrl: appState.apiUrl
-		};
+		this.setState({
+			locale: appState.locale
+		});
+	}
+
+	changeLocale(flag) {
+		appState.locale = flag.target.id;
+		this.setState( {
+			locale: appState.locale
+		});
 	}
 
 	render() {
-		console.log('Render App');
 		return (
 	      <app className={ styles.App }>
-	      	<LocaleFlags />
+	      	<LocaleFlags flagClick={ this.changeLocale.bind(this) }/>
 	      	<Navigation />
 	      </app>
 	    );
@@ -29,7 +35,7 @@ class App extends Component {
 render((
   <Router history={ browserHistory }>
     <Route path="/" component={ App }>
-    	the other place
+    	Router
     </Route>
   </Router>
 ), document.getElementById('react-app'));
