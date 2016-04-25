@@ -100,7 +100,6 @@
     "wrap-iife": [2, "any"],
     "yoda": 2,
 
-    "indent": [2, "tab"],
     "brace-style": [2,
       "1tbs", {
       "allowSingleLine": true
@@ -131,7 +130,7 @@
     "no-nested-ternary": 2,
     "no-new-object": 2,
     "no-spaced-func": 2,
-    "no-trailing-spaces": 2,
+    "no-trailing-spaces": 0,
     "no-extra-parens": [2, "functions"],
     "no-underscore-dangle": 0,
     "one-var": [2, "never"],
@@ -161,7 +160,7 @@
     "react/no-did-update-set-state": 2,
     "react/no-multi-comp": 2,
     "react/no-unknown-property": 2,
-    "react/prop-types": 2,
+    "react/prop-types": 0,
     "react/react-in-jsx-scope": 2,
     "react/self-closing-comp": 2,
     "react/wrap-multilines": 2,

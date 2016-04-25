@@ -1,4 +1,5 @@
 import React from 'react';
+import { browserHistory, Router, Route, IndexRoute, Link } from 'react-router';
 import styles from './Navigation.css';
 import appState from '../../state/app';
 import localise from '../../localisation/localisation';
@@ -13,11 +14,10 @@ export default class Navigation extends React.Component {
 		return (
 			<nav className={ styles.Navigation }>
 				<ul>
-					<li><a href="#">{ localise ('nav_who') }</a></li>
-					<li><a href="#">{ localise ('nav_what') }</a></li>
-					<li><a href="#">{ localise ('nav_when') }</a></li>
-					<li><a href="#">{ localise ('nav_where') }</a></li>
-					<li><a href="#">{ localise ('nav_how') }</a></li>
+					<li><Link to="/who">{ localise('nav_who') }</Link></li>
+					<li><Link to="/what">{ localise('nav_what') }</Link></li>
+					<li><Link to="/when">{ localise('nav_when') }</Link></li>
+					<li><Link to="/where">{ localise('nav_where') }</Link></li>
 				</ul>
 			</nav>
 		);

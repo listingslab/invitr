@@ -6,6 +6,11 @@ import styles from './App.css';
 import Navigation from './components/Navigation/Navigation';
 import LocaleFlags from './components/LocaleFlags/LocaleFlags';
 
+import Who from './views/Who';
+import What from './views/What';
+import When from './views/When';
+import Where from './views/Where';
+
 class App extends Component {
 
 	constructor(props) {
@@ -27,6 +32,10 @@ class App extends Component {
 	      <app className={ styles.App }>
 	      	<LocaleFlags flagClick={ this.changeLocale.bind(this) }/>
 	      	<Navigation />
+	      	{ React.cloneElement(this.props.children, {
+				key: this.props.location.pathname
+	      	}) }
+
 	      </app>
 	    );
 	}
@@ -35,7 +44,11 @@ class App extends Component {
 render((
   <Router history={ browserHistory }>
     <Route path="/" component={ App }>
-    	Router
+    	<IndexRoute component={ Who }/>
+    	<Route path="who" component={ Who } />
+    	<Route path="what" component={ What } />
+    	<Route path="when" component={ When } />
+    	<Route path="where" component={ Where } />
     </Route>
   </Router>
 ), document.getElementById('react-app'));

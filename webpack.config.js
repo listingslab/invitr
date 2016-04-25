@@ -3,10 +3,10 @@
  */
 "use strict";
 
-const   clear    = require('clear'),
+const   clear     = require('clear'),
         colors    = require('colors'),
-        path = require('path'),
-        webpack = require('webpack');
+        path      = require('path'),
+        webpack   = require('webpack');
 
 clear ();
 console.log('Webpacking...'.bgMagenta);
@@ -17,12 +17,12 @@ const PATHS = {
 };
 
 module.exports = {
-	
   entry: {
     app: PATHS.app
 	},
-
+  
   resolve: {
+    modulesDirectories: ['node_modules', 'app'],
     extensions: ['', '.js', '.jsx']
   },
 
@@ -42,19 +42,16 @@ module.exports = {
     ],
 
     loaders: [
-      
-      // { 
-      //   test: /\.css$/, 
-      //   loader: 'style!css' 
-      // },
 
-      { test: /node_modules[\/|\\].*\.css$/, loaders: [
+      { 
+        test: /node_modules[\/|\\].*\.css$/, loaders: [
         'style-loader?singleton',
         'css-loader',
         'cssnext-loader'
       ]},
 
-      { test: /[\/|\\]react-app[\/|\\].*\.css$/, loaders: [
+      { 
+        test: /[\/|\\]react-app[\/|\\].*\.css$/, loaders: [
         'style-loader?singleton',
         'css-loader?modules&localIdentName=[path]--[local]',
         'cssnext-loader'
@@ -74,7 +71,23 @@ module.exports = {
       }
     ],
   },
-  
+  cssnext: {
+    browsers: 'last 2 versions',
+    plugins: [
+      require('postcss-nested')
+    ],
+    features: {
+      customProperties: {
+        variables: require('./react-app/css/_vars'),
+        appendVariables: true
+      },
+      customMedia: {
+        extensions: require('./react-app/css/_media'),
+        preserve: true,
+        appendExtensions: true
+      }
+    }
+  },
   externals: {
       // Use external version of React
       "react": "React",
