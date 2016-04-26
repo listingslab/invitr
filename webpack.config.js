@@ -64,7 +64,9 @@ module.exports = {
         'css-loader?modules&localIdentName=[path]--[local]',
         'cssnext-loader'
       ]},
-
+      { 
+        test: /\.(json)/, loader: 'json-loader' 
+      },
       { 
         test: /\.csv/, loader: 'dsv-loader' 
       }
