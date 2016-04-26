@@ -1,5 +1,13 @@
 .LocaleFlags {
-	border:5px solid var(--section-border);
 
+	border:1px solid var(--section-border);
 	
+	> another {
+		border:5px solid red;
+	}
+
+	> p {
+		border:5px solid blue;
+	}
+
 }

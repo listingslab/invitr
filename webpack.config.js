@@ -3,10 +3,10 @@
  */
 "use strict";
 
-const   clear     = require('clear'),
-        colors    = require('colors'),
-        path      = require('path'),
-        webpack   = require('webpack');
+const   clear         = require('clear'),
+        colors        = require('colors'),
+        path          = require('path'),
+        webpack       = require('webpack');
 
 clear ();
 console.log('Webpacking...'.bgMagenta);
@@ -42,6 +42,14 @@ module.exports = {
     ],
 
     loaders: [
+      {
+        test: /\.jsx?$/,
+        loader: ['babel'],
+        exclude: /node_modules/,
+        query: {
+          presets: ['react', 'es2015']
+        }
+      },
 
       { 
         test: /node_modules[\/|\\].*\.css$/, loaders: [
@@ -59,17 +67,8 @@ module.exports = {
 
       { 
         test: /\.csv/, loader: 'dsv-loader' 
-      },
-  
-      {
-        test: /\.jsx?$/,
-        loader: ['babel'],
-        exclude: /node_modules/,
-        query: {
-          presets: ['react', 'es2015']
-        }
       }
-    ],
+    ]
   },
   cssnext: {
     browsers: 'last 2 versions',
@@ -88,9 +87,13 @@ module.exports = {
       }
     }
   },
+
+  plugins: [
+  ],
+
   externals: {
       // Use external version of React
-      "react": "React",
-      "react-dom": "ReactDOM"
+      'react': 'React',
+      'react-dom': 'ReactDOM'
   }
-}
+};

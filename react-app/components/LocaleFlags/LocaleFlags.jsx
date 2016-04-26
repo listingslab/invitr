@@ -13,12 +13,13 @@ export default class LocaleFlags extends React.Component {
 		return (
 			<div className={ styles.LocaleFlags }>
 
-
 				<img onClick={ this.props.flagClick } id="en" src="/img/flags/UK.png" />
 				<img onClick={ this.props.flagClick } id="de" src="/img/flags/Germany.png" />
 				<img onClick={ this.props.flagClick } id="zh" src="/img/flags/China.png" />
-			
-				<another>sjdud</another>
+				<p>para</p>
+				<another>
+					Another
+				</another>
 				
 			</div>
 		);
