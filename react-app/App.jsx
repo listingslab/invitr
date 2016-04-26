@@ -4,7 +4,7 @@ import { browserHistory, Router, Route, IndexRoute, Link } from 'react-router';
 import appState from './state/app';
 import styles from './App.css';
 import Navigation from './components/Navigation/Navigation';
-import LocaleFlags from './components/LocaleFlags/LocaleFlags';
+import Footer from './components/Footer/Footer';
 
 import Who from './views/Who';
 import What from './views/What';
@@ -20,24 +20,16 @@ class App extends Component {
 		});
 	}
 
-	changeLocale(flag) {
-		appState.locale = flag.target.id;
-		this.setState( {
-			locale: appState.locale
-		});
-	}
-
 	render() {
 		return (
-	      <app className={ styles.App }>
-	      	<LocaleFlags flagClick={ this.changeLocale.bind(this) }/>
-	      	<Navigation />
-	      	{ React.cloneElement(this.props.children, {
-				key: this.props.location.pathname
-	      	}) }
-
-	      </app>
-	    );
+			<div className={ styles.App }>
+				<Navigation />
+					{ React.cloneElement(this.props.children, {
+						key: this.props.location.pathname
+			      	}) }
+		      	<Footer/>
+		    </div>
+		);
 	}
 }
 

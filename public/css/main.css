@@ -1,24 +1,39 @@
-body, html, #wrapper {
-    width: 99%;
-    height: 98%;
-    font-size:12px;
-	font-family: Pacifico;
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
 }
-#wrapper {
-    display: table
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
 }
 
-#main {
-    display: table-cell;
-    vertical-align: middle;
-    text-align:center
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
 }
 
-.navlist {
-	display: block;
-    text-align:left;
-    font-size: 14px;
-    text-transform: uppercase;
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
 }
-a{
+
+code {
+  font-size: 80%;
 }
