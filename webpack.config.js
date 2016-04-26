@@ -22,7 +22,7 @@ module.exports = {
 	},
   
   resolve: {
-    modulesDirectories: ['node_modules', 'app'],
+    modulesDirectories: ['node_modules', 'react-app'],
     extensions: ['', '.js', '.jsx']
   },
 

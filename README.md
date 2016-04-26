@@ -26,9 +26,9 @@ https://www.npmjs.com/package/koa-simple-auth
 
 ### Technologies
 
-JavaScript, Node.js, Koa.js, OpenShift, Git, npm, Gulp, webpack, React
+JavaScript, Node.js, Koa.js, OpenShift, Git, npm, webpack, React, postcss-cssnext
 
-http://patorjk.com/software/taag/#p=display&f=Small&t=by%20listingslab
+http://patorjk.com/software/taag/#p=display&f=Small&t=invitr
 
 ### Colors
 black

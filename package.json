@@ -10,7 +10,7 @@
     "Koa",
     "react",
     "webpack",
-    "gulp"
+    "postcss-cssnext"
   ],
   "license": "MIT",
   "repository": {
