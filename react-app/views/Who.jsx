@@ -9,8 +9,10 @@ export default class Who extends React.Component {
 			<div className="page-header">
 				<h1>{ localise('nav_who') }</h1>
 			</div>
-			<p className="lead">Lead para</p>
-			<p>Two para</p>
+			<p className="lead">Danni Bament &amp; Chris Dorward</p>
+			<p>With special guest stars, Monkey Fred &amp; Dorinda</p>
+			<p>Also... Joshua, Ben, Oliver, Milly, Karen, Caroline, Gisela
+			Stewart, Aidan, Christoph, Jeff, Sue, Jason, Adam, Michelle</p>
 		</div>
     );
   }

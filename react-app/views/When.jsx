@@ -9,8 +9,8 @@ export default class When extends React.Component {
 			<div className="page-header">
 				<h1>{ localise('nav_when') }</h1>
 			</div>
-			<p className="lead">Lead para</p>
-			<p>Two para</p>
+			<p className="lead">Sat 13th August</p>
+			<p>Which is in xxx hours/mins time</p>
 		</div>
     );
   }

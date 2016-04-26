@@ -9,8 +9,8 @@ export default class What extends React.Component {
 			<div className="page-header">
 				<h1>{ localise('nav_what') }</h1>
 			</div>
-			<p className="lead">Lead para</p>
-			<p>Two para</p>
+			<p className="lead">We're getting married</p>
+			<p>In a fun ceremony</p>
 		</div>
     );
   }
