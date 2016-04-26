@@ -15,7 +15,15 @@ class App extends Component {
 
 	constructor(props) {
 		super(props);
-		this.setState({
+		this.state = {
+			locale: appState.locale
+		};
+	}
+
+	changeLocale(flag) {
+		// console.log('changeLocale(' + flag.target.id + ')');
+		appState.locale = flag.target.id;
+		this.setState( {
 			locale: appState.locale
 		});
 	}
@@ -23,7 +31,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className={ styles.App }>
-				<Navigation />
+				<Navigation path={ this.props.location.pathname } localeChanger={ this.changeLocale.bind(this) } />
 					{ React.cloneElement(this.props.children, {
 						key: this.props.location.pathname
 			      	}) }

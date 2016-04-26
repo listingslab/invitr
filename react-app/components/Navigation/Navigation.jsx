@@ -11,14 +11,8 @@ export default class Navigation extends React.Component {
 		super(props);
 	}
 
-	changeLocale(flag) {
-		appState.locale = flag.target.id;
-		this.setState( {
-			locale: appState.locale
-		});
-	}
-
 	dropdown (){
+		let brand = `<Link className="navbar-brand active" to="/">Invitr</Link>`;
 		let dd = `<li className="dropdown">
 					<a href="#" 
 						className="dropdown-toggle" 
@@ -30,8 +24,6 @@ export default class Navigation extends React.Component {
 
 					<ul className="dropdown-menu">
 						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
 						<li role="separator" className="divider"></li>
 						<li className="dropdown-header">Nav header</li>
 						<li><a href="#">Separated link</a></li>
@@ -41,11 +33,12 @@ export default class Navigation extends React.Component {
 	}
 
 	render() {
+		console.log(this.props.path);
 		return (
+
 			<nav className="navbar navbar-inverse navbar-fixed-top">
 				<div className="container">
-
-				<LocaleFlags flagClick={ this.changeLocale.bind(this) }/>
+				<LocaleFlags flagClick={ this.props.localeChanger }/>
 
 				<div className="navbar-header">
 					<button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -54,17 +47,22 @@ export default class Navigation extends React.Component {
 						<span className="icon-bar"></span>
 						<span className="icon-bar"></span>
 					</button>
-					<Link className="navbar-brand active" to="/">Invitr</Link>
+					
 				</div>
 				<div id="navbar" className="collapse navbar-collapse">
 					<ul className="nav navbar-nav">
-
-						<li><Link to="/who">{ localise('nav_who') }</Link></li>
-						<li><Link to="/what">{ localise('nav_what') }</Link></li>
- 						<li><Link to="/when">{ localise('nav_when') }</Link></li>
-						<li><Link to="/where">{ localise('nav_where') }</Link></li>
-
-						
+						<li>
+							<Link to="/who"> { localise('nav_who') }</Link>
+						</li>
+						<li>
+							<Link to="/what">{ localise('nav_what') }</Link>
+						</li>
+ 						<li>
+ 							<Link to="/when">{ localise('nav_when') }</Link>
+ 						</li>
+						<li>
+							<Link to="/where">{ localise('nav_where') }</Link>
+						</li>			
 					</ul>
 				</div>
 				</div>
