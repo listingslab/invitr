@@ -14,7 +14,9 @@ export default class Footer extends React.Component {
 		return (
 			<footer className={ styles.Footer }>
 				<div className="container">
-					<p className="text-muted">@listingslab</p>
+					<p className="text-muted">
+						<a href="http://listingslab.com" target="_blank">@listingslab</a>
+					</p>
 				</div>
 			</footer>
 		);

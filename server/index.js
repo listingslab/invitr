@@ -22,8 +22,8 @@ app.use(serve('public'));
  * API Routes
  */
 
-let 	index = require('./routes/index');
-app.use(route.get('/api', index.index));
+let 	api = require('./api');
+app.use(route.get('/api', api.index));
 
 let 	setup = require('./routes/setup');
 app.use(route.get('/api/setup', setup.setup));

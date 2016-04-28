@@ -9,5 +9,6 @@ if (window.location.port === '1968') {
 
 export default {
 	apiUrl:apiUrl,
+	loggedIn: false,
 	locale: 'en'
 };
