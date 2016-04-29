@@ -14,7 +14,7 @@ export default class NavGuest extends React.Component {
 		return (
 			<div className={ styles.NavGuest }>
 				<ul className="nav navbar-nav">
-					<li><Link to="/who"> { localise('nav_who') }</Link></li>
+					<li><Link to="/who">{ localise('nav_who') }</Link></li>
 					<li><Link to="/what">{ localise('nav_what') }</Link></li>
 					<li><Link to="/when">{ localise('nav_when') }</Link></li>
 					<li><Link to="/where">{ localise('nav_where') }</Link></li>

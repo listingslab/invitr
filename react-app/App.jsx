@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { browserHistory, Router, Route, IndexRoute, Link } from 'react-router';
 import appState from './state/app';
+import localise from './localisation/localisation';
 import styles from './App.css';
 import Navigation from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';

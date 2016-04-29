@@ -3,5 +3,6 @@ module.exports = {
 	'--dark-active': 'purple',
 	'--section-border': '#ddd',
 	'--practice': '#341A7F',
-	'--grey-bg': '#eee'
+	'--grey-bg': '#eee',
+	'--lightlink': '#ddd'
 };

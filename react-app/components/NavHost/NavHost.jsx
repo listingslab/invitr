@@ -1,6 +1,7 @@
 import React from 'react';
 import { browserHistory, Router, Route, IndexRoute, Link } from 'react-router';
 import styles from './NavHost.css';
+import localise from '../../localisation/localisation';
 import appState from '../../state/app';
 
 export default class NavHost extends React.Component {

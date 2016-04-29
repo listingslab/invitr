@@ -31,11 +31,12 @@ export default class Nav extends React.Component {
 							</button>
 						</div>
 						<div id="navbar" className="navbar-collapse collapse">
- 							<LocaleFlags flagClick={ this.props.localeChanger }/>
+ 							
  							<NavGuest />
 							{
 								appState.loggedIn ? <NavHost /> : <NavLogin />
 							}
+							<LocaleFlags flagClick={ this.props.localeChanger }/>
 						</div>
 					</div>
 				</nav>

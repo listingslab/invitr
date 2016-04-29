@@ -5,4 +5,13 @@
   /* Set the fixed height of the footer here */
   height: 60px;
   background-color: var(--grey-bg);
+  text-align: center;
+
+  a {
+  	color: var(--lightlink);
+  	text-decoration: none;
+  	&:hover{
+		color: var(--dark-active)
+	}
+  }
 }

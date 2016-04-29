@@ -8,14 +8,10 @@ export default class Where extends React.Component {
     return(
     	<div className="container">
 			<div className="jumbotron">
-				<h1>{ localise('nav_where') }</h1>
-				<p className="lead">Adelaide Zoo!</p>
-				<p>And then onto somewhere nice for the reception &amp; dancin'</p>
-				<p>
-					<Link className="btn btn-lg btn-primary" to="/who">
-						{ localise('nav_who') }
-					</Link>
-				</p>
+				<h2>{ localise('nav_where') }</h2>
+				<Link className="btn btn-lg btn-primary" to="/who">
+					{ localise('nav_who') }
+				</Link>
 			</div>
 		</div>
     );
