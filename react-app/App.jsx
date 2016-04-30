@@ -5,6 +5,7 @@ import appState from './state/app';
 import localise from './localisation/localisation';
 import styles from './App.css';
 import Navigation from './components/Nav/Nav';
+import Debugger from './components/Debugger/Debugger';
 import Footer from './components/Footer/Footer';
 
 import Who from './views/Who';
@@ -37,6 +38,7 @@ class App extends Component {
 					{ React.cloneElement(this.props.children, {
 						key: this.props.location.pathname
 			      	}) }
+			    <Debugger />
 		      	<Footer/>
 		    </div>
 		);

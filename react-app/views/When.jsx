@@ -8,10 +8,10 @@ export default class When extends React.Component {
     return(
     	<div className="container">
 			<div className="jumbotron">
-				<h2>{ localise('nav_when') }</h2>
-				<Link className="btn btn-lg btn-primary" to="/where">
+				<Link className="btn btn-lg btn-primary pull-right" to="/where">
 					{ localise('nav_where') }
 				</Link>
+				<h2>{ localise('nav_when') }</h2>
 			</div>
 		</div>
     );
