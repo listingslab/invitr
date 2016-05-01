@@ -1,7 +1,7 @@
 /**
  * Invitr configuration
  */
-"use strict";
+'use strict';
 
 const   _           = require("lodash"),
         path        = require("path"),

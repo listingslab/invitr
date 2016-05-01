@@ -34,12 +34,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className={ styles.App }>
-				<Navigation path={ this.props.location.pathname } localeChanger={ this.changeLocale.bind(this) } />
-					{ React.cloneElement(this.props.children, {
-						key: this.props.location.pathname
-			      	}) }
-			    <Debugger />
-		      	<Footer/>
+				
 		    </div>
 		);
 	}
