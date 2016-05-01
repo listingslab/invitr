@@ -14,32 +14,27 @@ export default class Nav extends React.Component {
 		super(props);
 		this.state = {
 			help: 'help'
-		}
+		};
 	}
 
 	render() {
 		return (
 			<div className={ styles.Nav }>
-				<nav className="navbar navbar-default navbar-static-top">
-					<div className="container">
-						<div className="navbar-header">
-							<button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-							<span className="sr-only">Toggle navigation</span>
-							<span className="icon-bar"></span>
-							<span className="icon-bar"></span>
-							<span className="icon-bar"></span>
-							</button>
-						</div>
-						<div id="navbar" className="navbar-collapse collapse">
- 							
- 							<NavGuest />
-							{
-								appState.loggedIn ? <NavHost /> : <NavLogin />
-							}
-							<LocaleFlags flagClick={ this.props.localeChanger }/>
-						</div>
-					</div>
-				</nav>
+				<div className="masthead clearfix">
+	            <div className="inner">
+	              <div className="masthead-brand">
+	              	<LocaleFlags flagClick={ this.props.localeChanger }/>
+	              </div>
+	              <nav>
+	                <ul className="nav masthead-nav">
+	                	<li><Link to="/who"> { localise('nav_who') }</Link></li>
+						<li><Link to="/what">{ localise('nav_what') }</Link></li>
+ 						<li><Link to="/when">{ localise('nav_when') }</Link></li>
+						<li><Link to="/where">{ localise('nav_where') }</Link></li>
+	                </ul>
+	              </nav>
+	            </div>
+	          </div>
 			</div>
 		);
 	}

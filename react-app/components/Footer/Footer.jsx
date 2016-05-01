@@ -11,14 +11,14 @@ export default class Footer extends React.Component {
 	}
 
 	render() {
-		return (
-			<footer className={ styles.Footer }>
-				<div className="container">
-					<p className="text-muted">
-						<a href="http://listingslab.com" target="_blank">@listingslab</a>
-					</p>
+		return (	
+			<div className={ styles.Footer }>
+				<div className="mastfoot">
+					<div className="inner">
+						<p>by <a href="http://listingslab.com" target="_blank">@listingslab</a>.</p>
+					</div>
 				</div>
-			</footer>
+			</div>
 		);
 	}
-}	
+}

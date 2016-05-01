@@ -4,7 +4,7 @@ import { browserHistory, Router, Route, IndexRoute, Link } from 'react-router';
 import appState from './state/app';
 import localise from './localisation/localisation';
 import styles from './App.css';
-import Navigation from './components/Nav/Nav';
+import Nav from './components/Nav/Nav';
 import Debugger from './components/Debugger/Debugger';
 import Footer from './components/Footer/Footer';
 
@@ -31,13 +31,31 @@ class App extends Component {
 		});
 	}
 
-	render() {
-		return (
-			<div className={ styles.App }>
-				
-		    </div>
-		);
-	}
+  render() {
+    return (
+      <div className={ styles.App }>
+        <div className="site-wrapper">
+          <div className="site-wrapper-inner">
+            <div className="cover-container">
+              <Nav path={ this.props.location.pathname } localeChanger={ this.changeLocale.bind(this) } />
+
+           <div className="inner cover">
+            <h1 className="cover-heading">&nbsp;</h1>
+            
+            <img src="./img/save_the_date.png" />
+            
+          </div>
+
+          <Footer />
+
+        </div>
+
+      </div>
+
+    </div>
+    </div>
+    );
+  }
 }
 
 render((
