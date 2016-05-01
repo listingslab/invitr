@@ -8,12 +8,11 @@ import Nav from './components/Nav/Nav';
 import Debugger from './components/Debugger/Debugger';
 import Footer from './components/Footer/Footer';
 
-import Who from './views/Who';
-import What from './views/What';
-import When from './views/When';
-import Where from './views/Where';
-import Host from './views/Host';
-import NoMatch from './views/NoMatch';
+import Home from './views/Home/Home';
+import Who from './views/Who/Who';
+import What from './views/What/What';
+import When from './views/When/When';
+import Where from './views/Where/Where';
 
 class App extends Component {
 
@@ -38,22 +37,16 @@ class App extends Component {
           <div className="site-wrapper-inner">
             <div className="cover-container">
               <Nav path={ this.props.location.pathname } localeChanger={ this.changeLocale.bind(this) } />
-
-           <div className="inner cover">
-            <h1 className="cover-heading">&nbsp;</h1>
-            
-            <img src="./img/save_the_date.png" />
-            
+              <div className="inner cover">
+                { React.cloneElement(this.props.children, {
+                  key: this.props.location.pathname
+                }) }
+              </div>
+              <Footer />
+            </div>
           </div>
-
-          <Footer />
-
         </div>
-
       </div>
-
-    </div>
-    </div>
     );
   }
 }
@@ -61,16 +54,16 @@ class App extends Component {
 render((
   <Router history={ browserHistory }>
     <Route path="/" component={ App }>
-    	<IndexRoute component={ Who }/>
+    	<IndexRoute component={ Home }/>
     	<Route path="who" component={ Who } />
     	<Route path="what" component={ What } />
     	<Route path="when" component={ When } />
     	<Route path="where" component={ Where } />
-    	<Route path="host" component={ Host } >
-    		<IndexRoute component={ Host }/>
-    		<Route path="guest-list" component={ Host } />
+    	<Route path="host" component={ Home } >
+    		<IndexRoute component={ Home }/>
+    		<Route path="guest-list" component={ Home } />
     	</Route>
-    	<Route path="*" component={ NoMatch } />
+    	<Route path="*" component={ Home } />
     </Route>
   </Router>
 ), document.getElementById('react-app'));
