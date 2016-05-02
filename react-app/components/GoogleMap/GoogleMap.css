@@ -1,0 +1,39 @@
+.GoogleMap {
+
+	> map {
+		float:left;
+		margin:auto;
+		width:100%;
+		min-height:400px;
+		display: block;
+		border: 1px solid black;
+		@media (min-width: 650px) {
+			width:75%;
+		}
+	}
+
+
+	
+	> places {
+		float:left;
+		display: block;
+		width:100%;
+		@media (min-width: 650px) {
+			width:25%;
+		}
+
+		> place {
+			cursor:pointer;
+			padding:10px;
+			display:flex;
+			background-color: rgba(255,255,255,.25);
+			border: 1px solid black;
+			&:hover{
+				background-color: rgba(255,255,255,.50);
+			}
+		}
+	}
+
+
+
+}
